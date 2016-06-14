@@ -34,4 +34,10 @@ public class AddFracrionsTest {
         assertEquals(7, sum.intValue());
 
     }
+    @Test
+    public void negativePlusPositive() throws Exception {
+        final Fraction sum = new Fraction(-3).plus(new Fraction(1));
+        assertEquals(-2, sum.intValue());
+
+    }
 }
