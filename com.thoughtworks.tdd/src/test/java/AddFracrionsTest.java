@@ -1,10 +1,6 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
-/**
- * Created by Han on 14/06/16.
- */
 public class AddFracrionsTest {
     @Test
     public void zeroPlusZero() throws Exception {
