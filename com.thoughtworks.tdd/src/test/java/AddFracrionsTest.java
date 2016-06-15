@@ -16,7 +16,6 @@ public class AddFracrionsTest {
     @Test
     public void nonZeroPlusZero() throws Exception {
         final Fraction sum = new Fraction(3).plus(new Fraction(0));
-
         assertEquals(3, sum.intValue());
 
     }
@@ -29,7 +28,7 @@ public class AddFracrionsTest {
     }
 
     @Test
-    public void nonNegativeNonZeroOperands() throws Exception {
+    public void nonNegativePlusNonZero() throws Exception {
         final Fraction sum = new Fraction(3).plus(new Fraction(4));
         assertEquals(7, sum.intValue());
 
@@ -38,6 +37,17 @@ public class AddFracrionsTest {
     public void negativePlusPositive() throws Exception {
         final Fraction sum = new Fraction(-3).plus(new Fraction(1));
         assertEquals(-2, sum.intValue());
+
+    }
+
+    @Test
+    public void nonTrivialDemoniator() throws Exception {
+
+        final Fraction sum = new Fraction(1,5).plus(new Fraction(2,5));
+
+        assertEquals(3,sum.getNumerator());
+        assertEquals(5, sum.getDenominator());
+
 
     }
 }
