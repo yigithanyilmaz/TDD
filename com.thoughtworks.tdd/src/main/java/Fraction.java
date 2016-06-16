@@ -45,3 +45,14 @@ public class Fraction {
         return super.equals(other);
     }
 }
+
+
+class Hede {
+    private int first;
+    private int second;
+
+    public Hede(int first, int second) {
+        this.first = first;
+        this.second = second;
+    }
+}
