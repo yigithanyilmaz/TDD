@@ -6,9 +6,7 @@ public class AddFractionsTest {
 
 
     private void checkFractionsAsIntegers(int added, int augend, int expected) {
-        assertEquals(expected, new Fraction(added).plus(new Fraction(augend)).intValue());
         assertEquals(new Fraction(expected), new Fraction(added).plus(new Fraction(augend)));
-
 
     }
 
@@ -36,9 +34,7 @@ public class AddFractionsTest {
 
     @Test
     public void negativePlusPositive() throws Exception {
-        final Fraction sum = new Fraction(-3).plus(new Fraction(1));
-        assertEquals(-2, sum.intValue());
-        checkFractionsAsIntegers(-3,1,-2);
+        checkFractionsAsIntegers(-3, 1, -2);
 
     }
 
