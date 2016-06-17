@@ -3,31 +3,34 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AddFractionsTest {
-    @Test
-    public void zeroPlusZero() throws Exception {
-        final Fraction sum = new Fraction(0).plus(new Fraction(0));
-        assertEquals(0, sum.intValue());
+
+
+    private void checkFractionsAsIntegers(int added, int augend, int expected) {
+        assertEquals(expected, new Fraction(added).plus(new Fraction(augend)).intValue());
+        assertEquals(new Fraction(expected), new Fraction(added).plus(new Fraction(augend)));
+
 
     }
 
     @Test
+    public void zeroPlusZero() throws Exception {
+        checkFractionsAsIntegers(0, 0, 0);
+    }
+
+    @Test
     public void nonZeroPlusZero() throws Exception {
-        final Fraction sum = new Fraction(3).plus(new Fraction(0));
-        assertEquals(3, sum.intValue());
+        checkFractionsAsIntegers(3, 0, 3);
 
     }
 
     @Test
     public void zeroPlusNonZero() throws Exception {
-        final Fraction sum = new Fraction(0).plus(new Fraction(5));
-        assertEquals(5, sum.intValue());
-
+        checkFractionsAsIntegers(5, 0, 5);
     }
 
     @Test
     public void nonNegativePlusNonZero() throws Exception {
-        final Fraction sum = new Fraction(3).plus(new Fraction(4));
-        assertEquals(7, sum.intValue());
+        checkFractionsAsIntegers(3, 4, 7);
 
     }
 
@@ -35,6 +38,7 @@ public class AddFractionsTest {
     public void negativePlusPositive() throws Exception {
         final Fraction sum = new Fraction(-3).plus(new Fraction(1));
         assertEquals(-2, sum.intValue());
+        checkFractionsAsIntegers(-3,1,-2);
 
     }
 
@@ -42,7 +46,7 @@ public class AddFractionsTest {
     public void nonTrivialDemoniator() throws Exception {
 
         final Fraction sum = new Fraction(1, 5).plus(new Fraction(2, 5));
-        assertEquals(new Fraction(3,5), sum);
+        assertEquals(new Fraction(3, 5), sum);
 
 
     }
