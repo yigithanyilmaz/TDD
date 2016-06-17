@@ -42,10 +42,14 @@ public class AddFractionsTest {
     public void nonTrivialDemoniator() throws Exception {
 
         final Fraction sum = new Fraction(1, 5).plus(new Fraction(2, 5));
+        assertEquals(new Fraction(3,5), sum);
 
-        assertEquals(3, sum.getNumerator());
-        assertEquals(5, sum.getDenominator());
 
+    }
+
+    @Test
+    public void negativenumberPlusNegativeNumber() throws Exception {
+        assertEquals(new Fraction(-5), new Fraction(-10).plus(new Fraction(5)));
 
     }
 }
