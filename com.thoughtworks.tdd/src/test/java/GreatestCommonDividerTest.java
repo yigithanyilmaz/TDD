@@ -26,6 +26,14 @@ public class GreatestCommonDividerTest {
 
     }
 
+    @Test
+    public void commonFactor() throws Exception {
+        assertEquals(2, gcd(6,8));
+        assertEquals(7, gcd(49,315));
+        assertEquals(-4,gcd(-24,-28));
+        assertEquals(4,gcd(-24,28));
+
+    }
 
     private int gcd (int a,int b){
         while(b != 0){
