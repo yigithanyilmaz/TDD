@@ -10,8 +10,9 @@ public class Fraction {
     }
 
     public Fraction(int numerator, int denominator) {
-        this.denominator = denominator;
-        this.numerator = numerator;
+        final int gcd =NumberTheory.gcd(numerator,denominator);
+        this.denominator = denominator/gcd;
+        this.numerator = numerator/gcd;
     }
 
     public Fraction plus(Fraction that) {
@@ -39,6 +40,15 @@ public class Fraction {
 
     @Override
     public int hashCode(){ return numerator * 19 + denominator;}
+
+    public int gcd (int a,int b){
+        while(b != 0){
+            int t = b;
+            b = a % t;
+            a = t;
+        }
+        return Math.abs(a);
+    }
 
 }
 
