@@ -1,3 +1,6 @@
+package com.thoughtworks.test;
+
+import com.thoughtworks.prod.Fraction;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

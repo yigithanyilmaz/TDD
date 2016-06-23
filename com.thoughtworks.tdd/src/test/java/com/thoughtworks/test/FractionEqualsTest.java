@@ -1,6 +1,7 @@
-import com.sun.prism.impl.FactoryResetException;
+package com.thoughtworks.test;
+
+import com.thoughtworks.prod.Fraction;
 import org.junit.Test;
-import sun.util.resources.cldr.br.CalendarData_br_FR;
 
 import static org.junit.Assert.*;
 

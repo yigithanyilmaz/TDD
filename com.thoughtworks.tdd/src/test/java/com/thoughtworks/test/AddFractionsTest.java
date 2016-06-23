@@ -1,3 +1,6 @@
+package com.thoughtworks.test;
+
+import com.thoughtworks.prod.Fraction;
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.Test;
 
@@ -92,7 +95,7 @@ public class AddFractionsTest {
     }
 
     @Test
-    @Ignore("constructor doesnt avoid negative numbers")
+    @Ignore()
     public void negativeSignsEverywhere() throws Exception {
         assertEquals(new Fraction(1, 2), new Fraction(1,-4).plus(new Fraction(-3, -4)));
 

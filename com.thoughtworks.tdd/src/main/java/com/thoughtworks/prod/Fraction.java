@@ -1,3 +1,4 @@
+package com.thoughtworks.prod;
 
 public class Fraction {
 
@@ -11,7 +12,7 @@ public class Fraction {
 
     public Fraction(int numerator, int denominator) {
         final int signOfDenominator = denominator < 0 ? -1 : 1;
-        final int gcd =NumberTheory.gcd(numerator,denominator) * signOfDenominator;
+        final int gcd = NumberTheory.gcd(numerator, denominator) * signOfDenominator;
         this.denominator = denominator/gcd;
         this.numerator = numerator/gcd;
     }
